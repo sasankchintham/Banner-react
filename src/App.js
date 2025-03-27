@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./Banner.css"; // External CSS for styling
 
-function App() {
+function Banner() {
+  const [text, setText] = useState("🔥 Limited Offer: 50% Off!");
+
+  const handleClick = () => {
+    setText("🎉 Hurry! Sale Ends Soon!");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="banner">
+      <h2 className="fade-in">{text}</h2>
+      <button className="btn" onClick={handleClick}>Change Text</button>
     </div>
   );
 }
-
-export default App;
+export default Banner;
